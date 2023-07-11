@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Camera Turn</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>Turning Camera </h2>
+        </div>
+        <div class="main">
+            <div>
+                <button onclick="turn_left()">왼쪽 보기</button>
+            </div>
+            <div>
+                <button onclick="turn_center()">가운데 보기</button>
+            </div>
+            <div>
+                <button onclick="turn_right()">오른쪽 보기</button>
+            </div>
+        </div>
+        <div id="result">
+            
+        </div>
+    </div>
+    <script>
+        function turn_left(){
+            fetch("/turn/left")
+            .then(response=> { console.log(response); return response.text()})
+            .then(data=> {
+                console.log(data);
+                let result = document.querySelector("#result");
+                if(data=="ok"){
+                    result.innerHTML = "<h1>Camera turn left</h1>";
+                }else{
+                    result.innerHTML = "<h1>error</h1>";
+                }
+            });
+        }
+        function turn_center(){
+            fetch("/turn/center")
+            .then(response=> response.text())
+            .then(data=> {
+                console.log(data);
+                let result = document.querySelector("#result");
+                if(data=="ok"){  
+                    result.innerHTML = "<h1>Camera turn center</h1>";
+                }else{
+                    result.innerHTML = "<h1>error</h1>";
+                }
+            });
+        }
+        function turn_right(){
+            fetch("/turn/right")
+            .then(response=> { console.log(response); return response.text()})
+            .then(data=> {
+                console.log(data);
+                let result = document.querySelector("#result");
+                if(data=="ok"){
+                    result.innerHTML = "<h1>Camera turn right</h1>";
+                }else{
+                    result.innerHTML = "<h1>error</h1>";
+                }
+            });
+        }
+    </script>
+</body>
+</html>

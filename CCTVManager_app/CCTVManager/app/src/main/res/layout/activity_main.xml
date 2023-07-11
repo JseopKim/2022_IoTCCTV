@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/bgbg"
+    android:orientation="vertical">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/frame">
+
+        <WebView
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:id="@+id/wv"
+            tools:ignore="WebViewLayout">
+        </WebView>
+
+    </FrameLayout>
+
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button1"
+        android:text="@string/strBtn1"
+        android:textColor="@color/text"
+        android:textSize="40dp"
+        android:fontFamily="@font/na5"
+        android:background="#393e46"
+        android:layout_marginTop="40dp"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button2"
+        android:text="카메라 회전"
+        android:textSize="40dp"
+        android:fontFamily="@font/na5"
+        android:textColor="@color/text"
+        android:background="#393e46"/>
+   <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button3"
+        android:text="@string/strBtn3"
+        android:textSize="40dp"
+        android:fontFamily="@font/na5"
+        android:textColor="@color/text"
+        android:background="#393e46"/>
+
+</LinearLayout>
